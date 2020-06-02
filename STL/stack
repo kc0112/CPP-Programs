@@ -1,0 +1,44 @@
+#include<iostream>
+#include<vector>
+#include<deque>
+#include<list>
+#include<stack>
+using namespace std;
+
+template <typename T>
+void display(std::stack<T>s)
+{
+    cout<<"[ ";
+    while(!s.empty())
+    {
+        cout<<s.top()<<" ";
+        s.pop();
+    }
+    cout<<" ]"<<endl;
+}
+
+int main()
+{
+    std::stack<int>s;
+    for(int i:{1,2,3,4,5})
+        {
+            s.push(i);
+        }
+        display(s);
+        s.push(100);
+        display(s);
+        s.pop();
+        s.pop();
+        display(s);
+        while(!s.empty())
+        {
+            s.pop();
+        }
+        display(s);
+        cout<<"Size : "<<s.size()<<endl;
+        s.push(10);
+        display(s);
+        s.top()=100;
+        display(s);
+        return 0;
+}
